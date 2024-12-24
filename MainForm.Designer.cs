@@ -32,6 +32,7 @@
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label12;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.cmbVideoSource = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.StartButton = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.processedImgBox = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.letterIndex = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tresholdTrackBar = new System.Windows.Forms.TrackBar();
@@ -48,6 +48,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.marginTrackBar = new System.Windows.Forms.TrackBar();
             this.borderTrackBar = new System.Windows.Forms.TrackBar();
+            this.letterIndex = new System.Windows.Forms.ComboBox();
             this.statusLabel = new System.Windows.Forms.Label();
             this.ticksLabel = new System.Windows.Forms.Label();
             this.controlPanel = new System.Windows.Forms.Panel();
@@ -202,7 +203,6 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.letterIndex);
             this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.tresholdTrackBar);
@@ -215,28 +215,10 @@
             this.panel2.Size = new System.Drawing.Size(442, 202);
             this.panel2.TabIndex = 18;
             // 
-            // letterIndex
-            // 
-            this.letterIndex.AllowDrop = true;
-            this.letterIndex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.letterIndex.FormattingEnabled = true;
-            this.letterIndex.Items.AddRange(new object[] {
-            "α (альфа)",
-            "γ (гамма)",
-            "φ (фи)",
-            "π (пи)",
-            "λ (лямбда)",
-            "κ (каппа)",
-            "ω (омега)"});
-            this.letterIndex.Location = new System.Drawing.Point(174, 143);
-            this.letterIndex.Name = "letterIndex";
-            this.letterIndex.Size = new System.Drawing.Size(218, 21);
-            this.letterIndex.TabIndex = 35;
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(174, 91);
+            this.checkBox1.Location = new System.Drawing.Point(194, 135);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(86, 17);
             this.checkBox1.TabIndex = 24;
@@ -299,7 +281,7 @@
             // 
             this.borderTrackBar.LargeChange = 60;
             this.borderTrackBar.Location = new System.Drawing.Point(7, 31);
-            this.borderTrackBar.Maximum = 160;
+            this.borderTrackBar.Maximum = 170;
             this.borderTrackBar.Name = "borderTrackBar";
             this.borderTrackBar.Size = new System.Drawing.Size(140, 45);
             this.borderTrackBar.TabIndex = 18;
@@ -307,6 +289,24 @@
             this.borderTrackBar.Value = 40;
             this.borderTrackBar.Scroll += new System.EventHandler(this.borderTrackBar_Scroll);
             this.borderTrackBar.ValueChanged += new System.EventHandler(this.borderTrackBar_ValueChanged);
+            // 
+            // letterIndex
+            // 
+            this.letterIndex.AllowDrop = true;
+            this.letterIndex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.letterIndex.FormattingEnabled = true;
+            this.letterIndex.Items.AddRange(new object[] {
+            "α (альфа)",
+            "γ (гамма)",
+            "φ (фи)",
+            "π (пи)",
+            "λ (лямбда)",
+            "κ (каппа)",
+            "ω (омега)"});
+            this.letterIndex.Location = new System.Drawing.Point(137, 694);
+            this.letterIndex.Name = "letterIndex";
+            this.letterIndex.Size = new System.Drawing.Size(218, 21);
+            this.letterIndex.TabIndex = 35;
             // 
             // statusLabel
             // 
@@ -333,7 +333,7 @@
             this.controlPanel.Controls.Add(this.ProcessButton);
             this.controlPanel.Controls.Add(this.PlayButton);
             this.controlPanel.Enabled = false;
-            this.controlPanel.Location = new System.Drawing.Point(657, 672);
+            this.controlPanel.Location = new System.Drawing.Point(658, 673);
             this.controlPanel.Name = "controlPanel";
             this.controlPanel.Size = new System.Drawing.Size(306, 59);
             this.controlPanel.TabIndex = 33;
@@ -463,7 +463,7 @@
             this.netStructureBox.Name = "netStructureBox";
             this.netStructureBox.Size = new System.Drawing.Size(120, 20);
             this.netStructureBox.TabIndex = 18;
-            this.netStructureBox.Text = "200;500;20;7";
+            this.netStructureBox.Text = "200;500;50;7";
             // 
             // recreateNetButton
             // 
@@ -522,7 +522,7 @@
             this.EpochesCounter.Size = new System.Drawing.Size(120, 20);
             this.EpochesCounter.TabIndex = 8;
             this.EpochesCounter.Value = new decimal(new int[] {
-            20,
+            30,
             0,
             0,
             0});
@@ -576,17 +576,18 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1102, 526);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(1023, 527);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 13);
+            this.label14.Size = new System.Drawing.Size(63, 25);
             this.label14.TabIndex = 41;
-            this.label14.Text = "label14";
+            this.label14.Text = "Буква";
             // 
             // startBot
             // 
-            this.startBot.Location = new System.Drawing.Point(974, 555);
-            this.startBot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.startBot.Location = new System.Drawing.Point(969, 699);
+            this.startBot.Margin = new System.Windows.Forms.Padding(2);
             this.startBot.Name = "startBot";
             this.startBot.Size = new System.Drawing.Size(110, 33);
             this.startBot.TabIndex = 42;
@@ -599,7 +600,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1278, 763);
+            this.Controls.Add(this.letterIndex);
             this.Controls.Add(this.startBot);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label9);
@@ -621,6 +626,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbVideoSource);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "MainForm";
             this.Text = "Распознавалка";

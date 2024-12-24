@@ -260,13 +260,17 @@ namespace Accord.WindowsForms
         private void loadDataset_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = true;
             openFileDialog.Filter = "Samples file|*.dat";
             openFileDialog.Title = "Open SamplesSet";
             openFileDialog.ShowDialog();
 
-            if (openFileDialog.FileName != "")
+            for (int i = 0; i < openFileDialog.FileNames.Length; i++)
             {
-                sampleController.Load(openFileDialog.FileName);
+                if (openFileDialog.FileNames[i] != "")
+                {
+                    sampleController.Load(openFileDialog.FileNames[i]);
+                }
             }
         }
 
